@@ -4,24 +4,22 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class Main {
 
     public static void main(String... args) {
-
-        try (final ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("my-config.xml")) {
-
-            final BeanFactory beanFactory = context;
-
-            final A a = beanFactory.getBean(A.class);
+        try (final var context = new ClassPathXmlApplicationContext("my-config.xml")) {
+            // fetch by type
+            final A a = context.getBean(A.class);
             System.out.println(a);
 
-            final A a2 = (A) beanFactory.getBean("a");
+            // fetch by id
+            final A a2 = (A) context.getBean("a");
             System.out.println(a2);
 
-            final BPojo b = beanFactory.getBean(BPojo.class);
-            System.out.println(b);
-            System.out.println(b.a);
+            final BPojo bPojo = context.getBean(BPojo.class);
+            System.out.println(bPojo);
+            System.out.println(bPojo.a);
 
-            final BWithConstructor b2 = beanFactory.getBean(BWithConstructor.class);
-            System.out.println(b2);
-            System.out.println(b2.a);
+            final BWithConstructor bWithConstructor = context.getBean(BWithConstructor.class);
+            System.out.println(bWithConstructor);
+            System.out.println(bWithConstructor.a);
         }
 
     }
