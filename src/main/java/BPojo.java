@@ -1,4 +1,4 @@
-public class B {
+public class BPojo {
 
     public A a;
 

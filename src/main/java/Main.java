@@ -15,11 +15,11 @@ public class Main {
             final A a2 = (A) beanFactory.getBean("a");
             System.out.println(a2);
 
-            final B b = beanFactory.getBean(B.class);
+            final BPojo b = beanFactory.getBean(BPojo.class);
             System.out.println(b);
             System.out.println(b.a);
 
-            final B2 b2 = beanFactory.getBean(B2.class);
+            final BWithConstructor b2 = beanFactory.getBean(BWithConstructor.class);
             System.out.println(b2);
             System.out.println(b2.a);
         }
