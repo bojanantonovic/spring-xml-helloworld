@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
 
 @SpringJUnitConfig(locations = "/my-config.xml")
-class SprintIntegrationTest {
+class SpringIntegrationTest {
 
 	@Autowired
 	private A a;
